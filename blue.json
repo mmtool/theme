@@ -1,0 +1,326 @@
+```json
+{
+  "designSystem": {
+    "name": "Atomic Wallet Design System",
+    "version": "4.0.0",
+    "description": "Complete production-ready design system for Digital Wallet / Super App / Fintech Platform",
+    "license": "MIT"
+  },
+  "globalDesignRules": {
+    "iconLibrary": "lucide-react",
+    "forbidden": [
+      "emoji",
+      "unicode emoji",
+      "random icon packs",
+      "mixed icon libraries",
+      "material-icons",
+      "bootstrap-icons",
+      "png icons"
+    ],
+    "required": [
+      "Lucide icons only",
+      "FontAwesome Pro allowed only if approved",
+      "SVG icons only",
+      "No PNG icons",
+      "All icons from single library per project"
+    ],
+    "codingStandards": [
+      "No inline hardcoded colors",
+      "No hardcoded spacing",
+      "No custom radius",
+      "No custom shadows",
+      "Use CSS variables only"
+    ],
+    "borderlessFirst": {
+      "default": "No backgrounds, no borders, no shadows",
+      "sectionsSeparatedBy": "spacing (margin-top: 28px) and subtle dividers",
+      "whiteSurfacesOnlyFor": ["interactive elements", "special cases"],
+      "cardsOnlyFor": ["modals", "bottom sheets", "elevated promotions"]
+    },
+    "borderRadiusRules": {
+      "buttons": "12px (ROUND RECTANGLE - NOT full round)",
+      "search": "12px (ROUND RECTANGLE - NOT full round)",
+      "cards": "16px",
+      "avatarsBadgesPills": "9999px (full round only)"
+    }
+  },
+  "layoutTokens": {
+    "breakpoints": {
+      "mobile": "390px",
+      "tablet": "768px",
+      "desktop": "1280px",
+      "wide": "1440px"
+    },
+    "dimensions": {
+      "headerHeight": "56px",
+      "bottomNavHeight": "72px",
+      "tabBarHeight": "48px",
+      "drawerWidth": "320px",
+      "sidebarWidth": "260px",
+      "contentMaxWidth": "600px"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px",
+      "3xl": "64px",
+      "section": "28px"
+    },
+    "appLayouts": {
+      "customerApp": { "maxWidth": "600px", "padding": "0 16px" },
+      "agentApp": { "maxWidth": "768px", "padding": "0 20px" },
+      "merchantPortal": { "maxWidth": "1200px", "padding": "0 24px" },
+      "adminDashboard": { "maxWidth": "1400px", "padding": "0 24px" }
+    }
+  },
+  "zIndexLayers": {
+    "base": 1,
+    "sticky": 100,
+    "header": 200,
+    "dropdown": 1000,
+    "floatingButton": 1100,
+    "overlay": 1200,
+    "drawer": 1300,
+    "bottomSheet": 1400,
+    "modal": 1500,
+    "toast": 1600,
+    "loader": 1700,
+    "tooltip": 1800,
+    "notification": 1900
+  },
+  "atomicStates": {
+    "default": {},
+    "hover": { "transform": "scale(1.02)" },
+    "pressed": { "transform": "scale(0.98)" },
+    "focused": { "boxShadow": "0 0 0 2px rgba(0, 82, 204, 0.2)" },
+    "disabled": { "opacity": 0.5, "cursor": "not-allowed" },
+    "loading": { "opacity": 0.7, "cursor": "wait" },
+    "success": { "borderColor": "#00875A", "backgroundColor": "#E3FCEF" },
+    "error": { "borderColor": "#DE350B", "backgroundColor": "#FFEBE6" },
+    "warning": { "borderColor": "#FF991F", "backgroundColor": "#FFF8E6" }
+  },
+  "formAtoms": {
+    "textInput": {
+      "base": { "width": "100%", "padding": "10px 14px", "fontSize": "14px", "border": "1px solid #DFE5EF", "borderRadius": "8px", "background": "#FFFFFF" },
+      "focus": { "borderColor": "#0052CC", "boxShadow": "0 0 0 2px rgba(0,82,204,0.2)" },
+      "error": { "borderColor": "#DE350B" },
+      "disabled": { "background": "#F4F5F7", "color": "#A1ACB8" }
+    },
+    "textarea": { "base": { "width": "100%", "padding": "10px 14px", "fontSize": "14px", "border": "1px solid #DFE5EF", "borderRadius": "8px", "minHeight": "80px" } },
+    "checkbox": { "container": { "display": "flex", "alignItems": "center", "gap": "8px" }, "box": { "width": "20px", "height": "20px", "border": "2px solid #DFE5EF", "borderRadius": "4px" }, "checked": { "background": "#0052CC", "borderColor": "#0052CC" } },
+    "radio": { "container": { "display": "flex", "alignItems": "center", "gap": "8px" }, "circle": { "width": "20px", "height": "20px", "border": "2px solid #DFE5EF", "borderRadius": "50%" }, "checked": { "borderColor": "#0052CC" } },
+    "switch": { "track": { "width": "44px", "height": "24px", "background": "#DFE5EF", "borderRadius": "9999px" }, "thumb": { "width": "20px", "height": "20px", "background": "white", "borderRadius": "50%" }, "checked": { "track": { "background": "#0052CC" }, "thumb": { "transform": "translateX(20px)" } } },
+    "select": { "base": { "width": "100%", "padding": "10px 32px 10px 14px", "fontSize": "14px", "border": "1px solid #DFE5EF", "borderRadius": "8px", "appearance": "none" } },
+    "otpInput": { "container": { "display": "flex", "gap": "12px", "justifyContent": "center" }, "input": { "width": "48px", "height": "56px", "textAlign": "center", "fontSize": "20px", "fontWeight": 600, "border": "1px solid #DFE5EF", "borderRadius": "8px" } },
+    "searchInput": { "container": { "position": "relative" }, "input": { "width": "100%", "padding": "12px 16px 12px 44px", "fontSize": "15px", "border": "1px solid #DFE5EF", "borderRadius": "12px" }, "icon": { "position": "absolute", "left": "14px", "top": "50%", "transform": "translateY(-50%)" } },
+    "amountInput": { "container": { "display": "flex", "alignItems": "baseline", "gap": "8px", "borderBottom": "2px solid #EBECF0" }, "currency": { "fontSize": "24px", "fontWeight": 600 }, "input": { "flex": 1, "fontSize": "36px", "fontWeight": 700, "border": "none", "outline": "none" } },
+    "pinInput": { "container": { "display": "flex", "gap": "16px", "justifyContent": "center" }, "dot": { "width": "56px", "height": "56px", "borderRadius": "12px", "border": "1px solid #DFE5EF", "textAlign": "center", "fontSize": "24px" }, "filled": { "borderColor": "#0052CC" } }
+  },
+  "fintechAtoms": {
+    "money": { "container": { "display": "inline-flex", "alignItems": "baseline" }, "currency": { "fontSize": "14px", "fontWeight": 500 }, "amount": { "fontSize": "20px", "fontWeight": 700 } },
+    "balance": { "label": { "fontSize": "14px", "color": "#5E6C84" }, "amount": { "fontSize": "32px", "fontWeight": 700 }, "subtext": { "fontSize": "12px", "color": "#5E6C84" } },
+    "fee": { "container": { "display": "flex", "justifyContent": "space-between", "padding": "8px 0" }, "label": { "fontSize": "14px", "color": "#5E6C84" }, "value": { "fontSize": "14px", "fontWeight": 500 } },
+    "exchangeRate": { "container": { "display": "flex", "alignItems": "center", "gap": "8px", "padding": "12px", "background": "#F4F5F7", "borderRadius": "12px" }, "from": { "fontWeight": 600 }, "to": { "fontWeight": 600 }, "rate": { "fontSize": "13px", "color": "#5E6C84" } },
+    "limit": { "container": { "marginTop": "8px" }, "label": { "fontSize": "12px", "color": "#5E6C84", "display": "flex", "justifyContent": "space-between" }, "progressBar": { "height": "4px", "background": "#EBECF0", "borderRadius": "9999px" }, "progressFill": { "height": "100%", "background": "#0052CC", "borderRadius": "9999px" } },
+    "status": {
+      "container": { "display": "inline-flex", "alignItems": "center", "gap": "6px", "padding": "4px 10px", "borderRadius": "9999px", "fontSize": "12px", "fontWeight": 600 },
+      "pending": { "background": "#FFF8E6", "color": "#CC7B00" },
+      "processing": { "background": "#E9F2FF", "color": "#0052CC" },
+      "approved": { "background": "#E3FCEF", "color": "#006644" },
+      "rejected": { "background": "#FFEBE6", "color": "#BF2600" },
+      "failed": { "background": "#FFEBE6", "color": "#BF2600" },
+      "cancelled": { "background": "#F4F5F7", "color": "#5E6C84" },
+      "expired": { "background": "#F4F5F7", "color": "#5E6C84" },
+      "reversed": { "background": "#FFEBE6", "color": "#BF2600" },
+      "refunded": { "background": "#E9F2FF", "color": "#0052CC" },
+      "completed": { "background": "#E3FCEF", "color": "#006644" },
+      "scheduled": { "background": "#E9F2FF", "color": "#0052CC" },
+      "draft": { "background": "#F4F5F7", "color": "#5E6C84" }
+    }
+  },
+  "statusSystem": {
+    "values": ["pending", "processing", "approved", "rejected", "failed", "cancelled", "expired", "reversed", "refunded", "completed", "scheduled", "draft"],
+    "mapping": {
+      "pending": { "color": "#FF991F", "bg": "#FFF8E6", "label": "Pending" },
+      "processing": { "color": "#0052CC", "bg": "#E9F2FF", "label": "Processing" },
+      "approved": { "color": "#00875A", "bg": "#E3FCEF", "label": "Approved" },
+      "rejected": { "color": "#DE350B", "bg": "#FFEBE6", "label": "Rejected" },
+      "failed": { "color": "#DE350B", "bg": "#FFEBE6", "label": "Failed" },
+      "cancelled": { "color": "#5E6C84", "bg": "#F4F5F7", "label": "Cancelled" },
+      "expired": { "color": "#5E6C84", "bg": "#F4F5F7", "label": "Expired" },
+      "reversed": { "color": "#DE350B", "bg": "#FFEBE6", "label": "Reversed" },
+      "refunded": { "color": "#0052CC", "bg": "#E9F2FF", "label": "Refunded" },
+      "completed": { "color": "#00875A", "bg": "#E3FCEF", "label": "Completed" },
+      "scheduled": { "color": "#0052CC", "bg": "#E9F2FF", "label": "Scheduled" },
+      "draft": { "color": "#5E6C84", "bg": "#F4F5F7", "label": "Draft" }
+    }
+  },
+  "avatarSystem": {
+    "sizes": { "xs": "24px", "sm": "32px", "md": "40px", "lg": "56px", "xl": "72px", "2xl": "96px" },
+    "types": {
+      "customer": { "background": "#E9F2FF", "color": "#0052CC" },
+      "agent": { "background": "#E0F7FA", "color": "#00838F" },
+      "merchant": { "background": "#E3FCEF", "color": "#006644" },
+      "business": { "background": "#F3E5F5", "color": "#6A1B9A" },
+      "admin": { "background": "#FFEBE6", "color": "#BF2600" }
+    },
+    "badge": { "online": { "background": "#00875A", "size": "12px" }, "offline": { "background": "#B3BAC5", "size": "12px" }, "busy": { "background": "#DE350B", "size": "12px" } }
+  },
+  "notificationAtoms": {
+    "badge": { "container": { "position": "relative" }, "dot": { "position": "absolute", "top": "-4px", "right": "-4px", "width": "8px", "height": "8px", "background": "#DE350B", "borderRadius": "50%" }, "count": { "position": "absolute", "top": "-8px", "right": "-8px", "background": "#DE350B", "color": "white", "fontSize": "10px", "borderRadius": "9999px", "padding": "2px 6px" } },
+    "toast": { "container": { "position": "fixed", "bottom": "80px", "left": "16px", "right": "16px", "zIndex": 1600 }, "content": { "background": "#172B4D", "color": "white", "padding": "12px 16px", "borderRadius": "12px" }, "success": { "background": "#00875A" }, "error": { "background": "#DE350B" }, "warning": { "background": "#FF991F" }, "info": { "background": "#0052CC" } },
+    "alert": { "container": { "padding": "16px", "borderRadius": "12px" }, "success": { "background": "#E3FCEF", "borderLeft": "3px solid #00875A" }, "error": { "background": "#FFEBE6", "borderLeft": "3px solid #DE350B" }, "warning": { "background": "#FFF8E6", "borderLeft": "3px solid #FF991F" }, "info": { "background": "#E9F2FF", "borderLeft": "3px solid #0052CC" } },
+    "banner": { "container": { "background": "#0052CC", "color": "white", "padding": "12px 16px", "textAlign": "center" } },
+    "snackbar": { "container": { "position": "fixed", "bottom": "24px", "left": "16px", "right": "16px", "background": "#172B4D", "color": "white", "padding": "12px 16px", "borderRadius": "12px", "display": "flex", "justifyContent": "space-between", "zIndex": 1600 } }
+  },
+  "emptyStates": {
+    "noData": { "icon": "📭", "title": "No Data", "description": "No data available to display", "action": "Refresh" },
+    "noTransaction": { "icon": "💸", "title": "No Transactions", "description": "Your transaction history will appear here", "action": "Make a Payment" },
+    "noBeneficiary": { "icon": "👤", "title": "No Beneficiaries", "description": "Add a beneficiary to send money", "action": "Add Beneficiary" },
+    "noInternet": { "icon": "🌐", "title": "No Internet Connection", "description": "Please check your connection and try again", "action": "Retry" },
+    "noResult": { "icon": "🔍", "title": "No Results Found", "description": "Try adjusting your search", "action": "Clear Filters" },
+    "noNotification": { "icon": "🔔", "title": "No Notifications", "description": "You're all caught up!" },
+    "noVoucher": { "icon": "🏷️", "title": "No Vouchers", "description": "Check back later for promotions", "action": "Browse Offers" }
+  },
+  "loadingSystem": {
+    "spinner": { "sizes": { "sm": "16px", "md": "24px", "lg": "32px" }, "border": "2px solid #EBECF0", "borderTop": "2px solid #0052CC", "borderRadius": "50%", "animation": "spin 0.8s linear infinite" },
+    "skeleton": { "base": { "background": "#F4F5F7", "borderRadius": "6px", "animation": "pulse 1.5s ease-in-out infinite" }, "text": { "height": "16px" }, "circle": { "borderRadius": "50%" }, "card": { "height": "200px", "borderRadius": "12px" }, "avatar": { "width": "48px", "height": "48px", "borderRadius": "50%" } },
+    "progress": { "container": { "height": "4px", "background": "#EBECF0", "borderRadius": "9999px" }, "fill": { "height": "100%", "background": "#0052CC", "transition": "width 0.3s ease" } },
+    "shimmer": { "background": "linear-gradient(90deg, #F4F5F7 25%, #FAFBFC 50%, #F4F5F7 75%)", "backgroundSize": "200% 100%", "animation": "shimmer 1.5s infinite" },
+    "pullToRefresh": { "container": { "display": "flex", "justifyContent": "center", "padding": "16px" }, "icon": { "animation": "rotate 0.8s linear infinite" } }
+  },
+  "securityComponents": {
+    "pinDots": { "container": { "display": "flex", "gap": "16px", "justifyContent": "center" }, "dot": { "width": "56px", "height": "56px", "borderRadius": "12px", "border": "1px solid #DFE5EF", "background": "white" }, "filled": { "background": "#0052CC", "borderColor": "#0052CC" }, "active": { "borderColor": "#0052CC", "boxShadow": "0 0 0 2px rgba(0,82,204,0.2)" } },
+    "biometricIcon": { "fingerprint": { "fontSize": "24px", "color": "#0052CC" }, "faceId": { "fontSize": "24px", "color": "#0052CC" } },
+    "sessionExpired": { "container": { "textAlign": "center", "padding": "32px" }, "icon": { "fontSize": "48px", "color": "#DE350B" }, "title": { "fontSize": "20px", "fontWeight": 700 } },
+    "deviceBinding": { "container": { "padding": "24px", "background": "#FFF8E6", "borderRadius": "12px" }, "deviceName": { "fontWeight": 600 }, "status": { "fontSize": "12px", "color": "#5E6C84" } },
+    "riskWarning": { "container": { "background": "#FFEBE6", "padding": "16px", "borderRadius": "12px", "borderLeft": "3px solid #DE350B" }, "title": { "fontWeight": 600, "color": "#BF2600" } },
+    "fraudAlert": { "container": { "background": "#DE350B", "color": "white", "padding": "16px", "borderRadius": "12px" }, "title": { "fontWeight": 600 } }
+  },
+  "qrEcosystem": {
+    "qrImage": { "container": { "background": "white", "padding": "24px", "borderRadius": "16px" }, "size": { "width": "200px", "height": "200px" } },
+    "qrScanner": { "container": { "position": "relative" }, "frame": { "position": "absolute", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", "width": "250px", "height": "250px", "border": "2px solid white" }, "scanningLine": { "position": "absolute", "top": 0, "left": 0, "right": 0, "height": "2px", "background": "#0052CC", "animation": "scan 2s linear infinite" } },
+    "qrFrame": { "container": { "background": "white", "borderRadius": "16px", "padding": "20px", "textAlign": "center" }, "border": "2px solid #0052CC" },
+    "qrStatus": { "pending": { "color": "#FF991F" }, "success": { "color": "#00875A" }, "failed": { "color": "#DE350B" }, "expired": { "color": "#5E6C84" } },
+    "qrAmount": { "container": { "textAlign": "center", "marginTop": "16px" }, "label": { "fontSize": "12px", "color": "#5E6C84" }, "amount": { "fontSize": "24px", "fontWeight": 700 } },
+    "qrMerchant": { "container": { "display": "flex", "alignItems": "center", "gap": "12px", "padding": "16px", "background": "#F4F5F7", "borderRadius": "12px" }, "name": { "fontWeight": 600 }, "location": { "fontSize": "12px", "color": "#5E6C84" } }
+  },
+  "transactionComponents": {
+    "transactionItem": { "container": { "display": "flex", "alignItems": "center", "gap": "14px", "padding": "14px 0", "borderBottom": "1px solid #EBECF0", "cursor": "pointer" }, "icon": { "width": "44px", "height": "44px", "borderRadius": "50%" }, "title": { "fontWeight": 500 }, "subtitle": { "fontSize": "11px", "color": "#5E6C84" }, "credit": { "color": "#00875A" }, "debit": { "color": "#DE350B" } },
+    "transactionSummary": { "container": { "background": "white", "borderRadius": "16px", "padding": "16px" }, "row": { "display": "flex", "justifyContent": "space-between", "padding": "8px 0" }, "total": { "borderTop": "1px solid #EBECF0", "paddingTop": "12px", "fontWeight": 700 } },
+    "transactionFee": { "container": { "display": "flex", "justifyContent": "space-between", "padding": "8px 0" }, "label": { "fontSize": "13px", "color": "#5E6C84" }, "value": { "fontSize": "13px", "fontWeight": 500 } },
+    "transactionStatus": { "container": { "display": "inline-flex", "alignItems": "center", "gap": "6px", "padding": "4px 10px", "borderRadius": "9999px", "fontSize": "11px", "fontWeight": 600 } },
+    "transactionTimeline": { "container": { "marginTop": "20px" }, "step": { "display": "flex", "gap": "12px", "marginBottom": "16px" }, "icon": { "width": "32px", "height": "32px", "borderRadius": "50%", "background": "#F4F5F7" }, "completed": { "background": "#E3FCEF", "color": "#00875A" }, "active": { "background": "#0052CC", "color": "white" }, "line": { "borderLeft": "2px solid #EBECF0", "marginLeft": "15px", "height": "24px" } }
+  },
+  "formattingRules": {
+    "currency": {
+      "MMK": { "symbol": "MMK", "format": "{value} MMK", "example": "100,000 MMK" },
+      "SGD": { "symbol": "SGD", "format": "SGD {value}", "example": "SGD 100.00" },
+      "USD": { "symbol": "USD", "format": "${value}", "example": "$100.00" },
+      "EUR": { "symbol": "EUR", "format": "€{value}", "example": "€100.00" },
+      "GBP": { "symbol": "GBP", "format": "£{value}", "example": "£100.00" },
+      "THB": { "symbol": "THB", "format": "฿{value}", "example": "฿100.00" },
+      "IDR": { "symbol": "IDR", "format": "Rp {value}", "example": "Rp 100,000" },
+      "PHP": { "symbol": "PHP", "format": "₱{value}", "example": "₱100.00" },
+      "VND": { "symbol": "VND", "format": "{value} ₫", "example": "100,000 ₫" }
+    },
+    "date": { "full": "DD MMM YYYY", "short": "DD/MM/YYYY", "numeric": "DD/MM/YY", "month": "MMM YYYY", "year": "YYYY" },
+    "time": { "hour24": "HH:mm", "hour12": "hh:mm A", "withSeconds": "HH:mm:ss" },
+    "dateTime": { "standard": "DD MMM YYYY, HH:mm", "short": "DD/MM/YY, hh:mm A", "full": "DD MMMM YYYY HH:mm:ss" },
+    "number": { "decimal": 2, "decimalSeparator": ".", "thousandSeparator": ",", "compact": { "thousand": "K", "million": "M", "billion": "B" } },
+    "phone": { "local": "0XXX XXX XXX", "international": "+XX XXX XXX XXX" }
+  },
+  "accessibility": {
+    "minTouchTarget": "44x44",
+    "minimumContrast": "4.5:1",
+    "focusVisible": true,
+    "keyboardNavigation": true,
+    "screenReader": { "labels": true, "descriptions": true, "announcements": true },
+    "motion": { "reduce": "prefers-reduced-motion: reduce" },
+    "colorBlind": { "deuteranopia": { "primary": "#0052CC" }, "protanopia": { "primary": "#0052CC" }, "tritanopia": { "primary": "#0052CC" } }
+  },
+  "permissions": {
+    "roles": {
+      "customer": { "level": 10, "view": "customer", "features": ["send", "receive", "qr", "transactions"] },
+      "agent": { "level": 20, "view": "agent", "features": ["cashIn", "cashOut", "merchantQr", "reports"] },
+      "merchant": { "level": 30, "view": "merchant", "features": ["payments", "refunds", "settlements", "analytics"] },
+      "supervisor": { "level": 40, "view": "agent", "features": ["approveLimits", "viewAgents", "reports"] },
+      "finance": { "level": 50, "view": "admin", "features": ["reconciliation", "ledger", "reports", "audit"] },
+      "operation": { "level": 60, "view": "admin", "features": ["userManagement", "disputes", "support"] },
+      "admin": { "level": 90, "view": "admin", "features": ["all"], "isAdmin": true },
+      "superAdmin": { "level": 100, "view": "superadmin", "features": ["all", "systemConfig"], "isSuperAdmin": true }
+    },
+    "featureVisibility": {
+      "hidden": { "isVisible": false, "isEnabled": false },
+      "disabled": { "isVisible": true, "isEnabled": false },
+      "readOnly": { "isVisible": true, "isEnabled": false, "isReadOnly": true },
+      "enabled": { "isVisible": true, "isEnabled": true }
+    }
+  },
+  "featureVisibility": { "hidden": { "css": "display: none" }, "disabled": { "css": "opacity: 0.5; pointer-events: none" }, "readOnly": { "css": "opacity: 0.7; cursor: default" }, "enabled": { "css": "" } },
+  "errorCatalog": {
+    "network": { "code": "ERR_NETWORK", "message": "Network connection failed", "userMessage": "Unable to connect. Please check your internet." },
+    "timeout": { "code": "ERR_TIMEOUT", "message": "Request timeout", "userMessage": "Request timed out. Please try again." },
+    "duplicate": { "code": "ERR_DUPLICATE", "message": "Duplicate request", "userMessage": "This transaction appears to be a duplicate." },
+    "validation": { "code": "ERR_VALIDATION", "message": "Validation failed", "userMessage": "Please check your input and try again." },
+    "permission": { "code": "ERR_PERMISSION", "message": "Permission denied", "userMessage": "You don't have permission for this action." },
+    "limitExceeded": { "code": "ERR_LIMIT", "message": "Daily limit exceeded", "userMessage": "You have exceeded your daily transaction limit." },
+    "insufficientBalance": { "code": "ERR_BALANCE", "message": "Insufficient balance", "userMessage": "Insufficient balance to complete this transaction." },
+    "fraudDetected": { "code": "ERR_FRAUD", "message": "Potential fraud detected", "userMessage": "Transaction flagged for security review." },
+    "serverError": { "code": "ERR_SERVER", "message": "Internal server error", "userMessage": "Something went wrong. Please try again later." }
+  },
+  "governance": {
+    "iconLibrary": "Lucide",
+    "illustrationStyle": "Flat",
+    "animationDuration": 200,
+    "allowedLibraries": ["Lucide", "FontAwesome Pro (approved only)"],
+    "forbiddenLibraries": ["Material Icons", "Bootstrap Icons", "Ionicons", "Feather (unless mapped)"],
+    "emojiAllowed": false,
+    "customColorsAllowed": false,
+    "customRadiusAllowed": false,
+    "customShadowAllowed": false,
+    "customSpacingAllowed": false,
+    "customTypographyAllowed": false,
+    "reviewRequired": true,
+    "versioning": "semantic",
+    "componentChecklist": [
+      "supports all AtomicStates",
+      "uses tokens only (no hardcoded values)",
+      "accessible (WCAG 2.1 AA)",
+      "responsive (mobile-first)",
+      "has loading state",
+      "has empty state",
+      "has error state"
+    ]
+  },
+  "microInteractions": {
+    "scalePress": ".scale-press:active { transform: scale(0.96); transition: transform 150ms cubic-bezier(0.34, 1.56, 0.64, 1); }",
+    "subtleBg": ".subtle-bg:active { background: rgba(0, 82, 204, 0.04); transition: background 150ms ease; }",
+    "ripple": ".ripple:active::after { content: ''; position: absolute; top: 50%; left: 50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0,82,204,0.1) 0%, transparent 80%); transform: translate(-50%, -50%); animation: rippleExpand 0.4s ease-out; }",
+    "skeleton": ".skeleton { background: linear-gradient(90deg, #EBECF0 25%, #F4F5F7 50%, #EBECF0 75%); background-size: 200% 100%; animation: skeleton-loading 1.5s infinite; }",
+    "slideIn": ".slide-in { animation: slideInUp 300ms ease-out; }",
+    "pulse": ".pulse { animation: pulse 1.5s ease-in-out infinite; }",
+    "shake": ".shake { animation: shake 0.3s ease-in-out; }",
+    "lift": ".lift:active { transform: translateY(-2px); box-shadow: 0px 4px 12px rgba(9, 30, 66, 0.12); }"
+  },
+  "designSystemRulesSummary": [
+    "Use Lucide icons only. FontAwesome only when Lucide icon unavailable (requires approval).",
+    "No Emoji in UI. No Material Icons. No Bootstrap Icons.",
+    "No inline hardcoded colors, spacing, custom radius, or custom shadows.",
+    "All components must support: Default, Hover, Focus, Pressed, Disabled, Loading, Error.",
+    "Minimum touch area = 44x44.",
+    "Currency format must use formatter. Status colors must come from status token.",
+    "Every screen requires: Loading state, Empty state, Error state.",
+    "All icons must be SVG. No PNG icons.",
+    "Borderless-first principle: default no backgrounds/borders/shadows, sections separated by spacing and dividers.",
+    "Buttons and search inputs: 12px (ROUND RECTANGLE, NOT full round).",
+    "Avatars/badges/pills: 9999px (full round only).",
+    "UI must respect user role (customer, agent, merchant, admin). Features can be hidden/disabled/readOnly/enabled.",
+    "No custom colors, radius, shadows, spacing, or typography outside token system.",
+    "All changes require review. Use semantic versioning."
+  ]
+}
+```
